@@ -13,18 +13,21 @@ signed main()
     ios::sync_with_stdio(false);
     cin.tie(NULL);
 
-    int x;cin>>x;
-    vector<int>v(x);
-    for(int i=0;i<x;i++){
-        cin>>v[i];
+    int x;
+    cin>>x;
+
+    set<int>s;
+    for(int i = 0; i <x;i++){
+        int a;
+        cin>>a;
+        s.insert(a);
     }
-    set<int>s(v.begin(),v.end());
-    vector<int>arr(s.begin(),s.end());
-    sort(arr.begin(),arr.end());
-    if(arr.size()==1){
+    vector<int> v(s.begin(),s.end());
+    sort(v.begin(),v.end());
+    if(v.size() == 1){
         cout<<"NO"<<endl;
     }
     else{
-        cout<<arr[1]<<endl;
+        cout <<v[1]<<endl;
     }
 }
